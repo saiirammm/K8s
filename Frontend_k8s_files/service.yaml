@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service # Service resource type
+metadata: # Metadata for the service
+  name: frontend-service
+  labels:
+    app: frontend   
+spec:
+  type: ClusterIP # Service type 
+  selector: # Selector to match pods
+    app: frontend
+  ports: # Port configuration
+    - protocol: TCP
+      port: 80 # Port exposed by the service
+      targetPort: 3000 # Port on the pod to forward traffic to

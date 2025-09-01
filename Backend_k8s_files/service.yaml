@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service # Service resource type
+metadata: # Metadata for the service
+  name: backend-service
+  labels:
+    app: backend
+spec:
+  type: ClusterIP # Service type
+  selector: # Selector to match pods
+    app: backend
+  ports: # Port configuration
+    - protocol: TCP
+      port: 4000 #t exposed by the service
+      targetPort: 4000 # Port on the pod to forward traffic to
