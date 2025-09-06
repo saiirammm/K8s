@@ -10,6 +10,5 @@ spec:
     app: mongo
   ports: # Port configuration
     - protocol: TCP
-      port: 27017 #t exposed by the service
+      port: 5000 #t exposed by the service
       targetPort: 27017 # Port on the pod to forward traffic to
-      
